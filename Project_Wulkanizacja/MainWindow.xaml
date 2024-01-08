@@ -10,7 +10,7 @@
         <Label Content="Rejestracja" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="RegistrationInputTextBox" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" TextChanged="TextBox_TextChanged" Height="30"/>
         <Button x:Name="RegistrationSearchButton" Content="Szukaj" HorizontalAlignment="Left" Margin="225,41,0,0" VerticalAlignment="Top" Width="104" Height="30"/>
-        <DataGrid x:Name="ResultsGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,76,375,184" SelectionChanged="DataGrid_SelectionChanged"/>
+        <DataGrid x:Name="ResultsGrid" d:ItemsSource="{d:SampleData ItemCount=10}" Margin="10,76,375,184" SelectionChanged="DataGrid_SelectionChanged"/>
         <Button x:Name="RemarkShowButton" Content="Pokaż uwagi" HorizontalAlignment="Left" Margin="10,746,0,0" VerticalAlignment="Top" Height="35" Width="600"/>
         <Button x:Name="RemarkSaveButton" Content="Zapisz uwagi" HorizontalAlignment="Left" Margin="853,746,0,0" VerticalAlignment="Top" Height="35" Width="212"/>
         <Rectangle HorizontalAlignment="Left" Height="610" Margin="1070,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>
