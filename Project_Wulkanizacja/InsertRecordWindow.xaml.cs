@@ -46,7 +46,32 @@ namespace Project_Wulkanizacja
 
         private void InsertRecord(object sender, RoutedEventArgs e)
         {
+            if (IsSetCorrectly())
+            {
+                String valuesString = "";
 
+            }
+            else
+            {
+                MessageWindow messageWindow = new MessageWindow("Któraś z wartości nie została poprawnie wprowadzona");
+                messageWindow.ShowDialog();
+            }
+        }
+
+        private bool IsSetCorrectly()
+        {
+            if (!(string.IsNullOrWhiteSpace(InsertRegistrationNumberTextBox.Text) && string.IsNullOrWhiteSpace(InsertCarBrandTextBox.Text) && InsertWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(InsertSizeTextBox.Text) && InsertWarehouseComboBox == null && InsertStatusComboBox == null))
+            {
+                if(int.TryParse(InsertSizeTextBox.Text, out int parsedSize)){
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            return false;
         }
     }
 }

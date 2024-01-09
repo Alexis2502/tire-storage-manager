@@ -84,7 +84,7 @@ namespace Project_Wulkanizacja
                 return false;
             }
         }
-        public void Insert()
+        public void Insert(String registration_number, String carBrand, String wheelsOrTires, int size, String quality, String warehouseNumber, String status)
         {
             string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, kola/opony, rozmiar, jakosc, nr_magazynu, status) VALUES(#)";
 
