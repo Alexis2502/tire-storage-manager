@@ -20,6 +20,9 @@ namespace Project_Wulkanizacja
 
     public partial class InsertRecordWindow : Window
     {
+
+        DBConnect dBConnect = new DBConnect();
+
         List<String> WheelOrTire;
         List<String> Qualities;
         List<String> WarehouseNumbers;
@@ -39,6 +42,11 @@ namespace Project_Wulkanizacja
             InsertQualityComboBox.ItemsSource = Qualities;
             InsertWarehouseComboBox.ItemsSource = WarehouseNumbers;
             InsertStatusComboBox.ItemsSource = Statuses;
+        }
+
+        private void InsertRecord(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

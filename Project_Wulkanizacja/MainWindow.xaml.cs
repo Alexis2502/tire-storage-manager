@@ -20,6 +20,7 @@ namespace Project_Wulkanizacja
     /// </summary>
     public partial class MainWindow : Window
     {
+        DBConnect dBConnect = new DBConnect();
 
         List<String> WheelOrTire = new List<String> {"koła", "opony"};
         List<String> Qualities = new List<String> {"test1", "test2", "test3" };
