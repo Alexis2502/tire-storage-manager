@@ -82,5 +82,10 @@ namespace Project_Wulkanizacja
             }
             return false;
         }
+
+        private void InsertCarBrandTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

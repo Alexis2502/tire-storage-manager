@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,16 +28,16 @@ namespace Project_Wulkanizacja
 
         private void Initialize()
         {
-            List<String> source = new List<String>();
+            MyCredentials credentials = new MyCredentials();
             using (StreamReader r = new StreamReader("credentials.json"))
             {
                 string json = r.ReadToEnd();
-                source = JsonSerializer.Deserialize<List<String>>(json);
+                credentials = JsonConvert.DeserializeObject<MyCredentials>(json);
             }
-            server = source[0];
-            database = source[1];
-            uid = source[2];
-            password = source[3];
+            server = credentials.server;
+            database = credentials.database;
+            uid = credentials.uid;
+            password = credentials.password;
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

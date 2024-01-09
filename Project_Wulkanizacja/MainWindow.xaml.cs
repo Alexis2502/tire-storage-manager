@@ -23,7 +23,7 @@ namespace Project_Wulkanizacja
         DBConnect dBConnect = new DBConnect();
 
         List<String> WheelOrTire = new List<String> {"koła", "opony"};
-        List<String> Qualities = new List<String> {"test1", "test2", "test3" };
+        List<String> Qualities = new List<String> {"A", "B", "C", "D" };
         List<String> WarehouseNumbers = new List<String> {"1", "2", "3", "4" };
         List<String> Statuses = new List<String> { "testStatus1", "testStatus2", "testStatus3" };
 
@@ -68,6 +68,11 @@ namespace Project_Wulkanizacja
         }
 
         private void SaveRemark(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
