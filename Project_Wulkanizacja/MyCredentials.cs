@@ -8,9 +8,9 @@ namespace Project_Wulkanizacja
 {
     public class MyCredentials
     {
-        public string server { get; set; }
-        public string database { get;set; }
-        public string uid { get; set; }
-        public string password { get; set; }
+        public String server { get; set; }
+        public String database { get;set; }
+        public String uid { get; set; }
+        public String password { get; set; }
     }
 }

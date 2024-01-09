@@ -1,14 +1,14 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Dapper;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
-using Dapper;
 
 namespace Project_Wulkanizacja
 {
-    class DBConnect
+    class UsedDBConnect
     {
         private MySqlConnection connection;
         private string server;
@@ -16,7 +16,7 @@ namespace Project_Wulkanizacja
         private string uid;
         private string password;
 
-        public DBConnect()
+        public UsedDBConnect()
         {
             Initialize();
         }
@@ -82,7 +82,7 @@ namespace Project_Wulkanizacja
         }
         public void Insert(String valuesString)
         {
-            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, kola/opony, rozmiar, jakosc, nr_magazynu, status, notatki) VALUES("+valuesString+")";
+            string query = "INSERT INTO uzywane_opony (rozmiar, cena) VALUES(" + valuesString + ")";
 
             if (this.OpenConnection() == true)
             {
@@ -94,28 +94,28 @@ namespace Project_Wulkanizacja
             }
         }
 
-        public List<StorageEntry> SelectFromTable()
+        public List<UsedEntry> SelectFromTable()
         {
-            List<StorageEntry> results = new List<StorageEntry>();
-            string query = "SELECT * FROM opony";
+            List<UsedEntry> results = new List<UsedEntry>();
+            string query = "SELECT * FROM uzywane_opony";
 
             if (this.OpenConnection() == true)
             {
-                results = connection.Query<StorageEntry>(query).AsList();
+                results = connection.Query<UsedEntry>(query).AsList();
 
                 this.CloseConnection();
             }
             return results;
         }
 
-        public List<StorageEntry> SelectLicenseFromTable(String nr_rejestracyjny)
+        public List<UsedEntry> SelectSizeFromTable(String rozmiar)
         {
-            List<StorageEntry> results = new List<StorageEntry>();
-            String query = "SELECT * FROM opony WHERE nr_rejestracyjny="+nr_rejestracyjny;
+            List<UsedEntry> results = new List<UsedEntry>();
+            String query = "SELECT * FROM uzywane_opony WHERE rozmiar=" + rozmiar;
 
             if (this.OpenConnection() == true)
             {
-                results = connection.Query<StorageEntry>(query).AsList();
+                results = connection.Query<UsedEntry>(query).AsList();
 
                 this.CloseConnection();
             }
@@ -124,7 +124,7 @@ namespace Project_Wulkanizacja
 
         public void Update()
         {
-            string query = "UPDATE opony SET # WHERE #";
+            string query = "UPDATE uzywane_opony SET # WHERE #";
 
             if (this.OpenConnection() == true)
             {
@@ -136,7 +136,7 @@ namespace Project_Wulkanizacja
 
         public void Delete()
         {
-            string query = "DELETE FROM opony WHERE #";
+            string query = "DELETE FROM uzywane_opony WHERE #";
 
             if (this.OpenConnection() == true)
             {
