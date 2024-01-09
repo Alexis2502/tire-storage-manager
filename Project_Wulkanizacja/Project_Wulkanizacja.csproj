@@ -12,5 +12,4 @@
       <GeneratePathProperty>True</GeneratePathProperty>
     </PackageReference>
   </ItemGroup>
-
 </Project>
