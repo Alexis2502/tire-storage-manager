@@ -28,7 +28,7 @@ namespace Project_Wulkanizacja
         private void Initialize()
         {
             List<String> source = new List<String>();
-            using (StreamReader r = new StreamReader("data.json"))
+            using (StreamReader r = new StreamReader("credentials.json"))
             {
                 string json = r.ReadToEnd();
                 source = JsonSerializer.Deserialize<List<String>>(json);
@@ -98,7 +98,7 @@ namespace Project_Wulkanizacja
             }
         }
 
-        public void Update(String setColumnsString, int id)
+        public void Update()
         {//
             string query = "UPDATE opony SET # WHERE #";
 

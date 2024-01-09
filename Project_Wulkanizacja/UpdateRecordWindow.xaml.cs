@@ -59,7 +59,7 @@ namespace Project_Wulkanizacja
 
 
 
-                dBConnect.Update(setString, id);
+                dBConnect.Update();
 
             }
             else
@@ -71,9 +71,9 @@ namespace Project_Wulkanizacja
 
         private bool IsSetCorrectly()
         {
-            if (!(string.IsNullOrWhiteSpace(InsertRegistrationNumberTextBox.Text) && string.IsNullOrWhiteSpace(InsertCarBrandTextBox.Text) && InsertWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(InsertSizeTextBox.Text) && InsertWarehouseComboBox == null && InsertStatusComboBox == null))
+            if (!(string.IsNullOrWhiteSpace(UpdateRegistrationNumberTextBox.Text) && string.IsNullOrWhiteSpace(UpdateCarBrandTextBox.Text) && UpdateWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(UpdateSizeTextBox.Text) && UpdateWarehouseComboBox == null && UpdateStatusComboBox == null))
             {
-                if (int.TryParse(InsertSizeTextBox.Text, out int parsedSize))
+                if (int.TryParse(UpdateSizeTextBox.Text, out int parsedSize))
                 {
                     return true;
                 }
