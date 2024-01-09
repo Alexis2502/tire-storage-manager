@@ -32,6 +32,13 @@ namespace Project_Wulkanizacja
             InitializeComponent();
         }
 
+        private void DataGrid_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            RecordEditButton.IsEnabled = true;
+            RecordDeleteButton.IsEnabled = true;
+            RemarkShowButton.IsEnabled = true;
+        }
+
         private void RecordInsertButton_Click(object sender, RoutedEventArgs e)
         {
             InsertRecordWindow insertRecordWindow = new InsertRecordWindow(WheelOrTire, Qualities, WarehouseNumbers, Statuses);
@@ -40,7 +47,17 @@ namespace Project_Wulkanizacja
             insertRecordWindow.ShowDialog();
         }
 
-        private void DataGrid_SelectionChanged(object sender, RoutedEventArgs e)
+        private void UpdateRecord(object sender, RoutedEventArgs e)
+        {
+            UpdateRecordWindow updateRecordWindow = new UpdateRecordWindow(WheelOrTire, Qualities, WarehouseNumbers, Statuses);
+        }
+
+        private void DeleteRecord(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowRemarks(object sender, RoutedEventArgs e)
         {
 
         }
