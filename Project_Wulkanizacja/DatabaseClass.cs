@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
+using Dapper;
 
 namespace Project_Wulkanizacja
 {
@@ -97,6 +98,20 @@ namespace Project_Wulkanizacja
 
                 this.CloseConnection();
             }
+        }
+
+        public List<StorageEntry> SelectFromTable()
+        {
+            List<StorageEntry> results = new List<StorageEntry>();
+            string query = "SELECT * FROM opony";
+
+            if (this.OpenConnection() == true)
+            {
+                results = connection.Query<StorageEntry>(query).AsList();
+
+                this.CloseConnection();
+            }
+            return results;
         }
 
         public void Update()
