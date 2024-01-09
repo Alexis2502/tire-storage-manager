@@ -20,6 +20,12 @@ namespace Project_Wulkanizacja
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        List<String> WheelOrTire = new List<String> {"koła", "opony"};
+        List<String> Qualities = new List<String> {"test1", "test2", "test3" };
+        List<String> WarehouseNumbers = new List<String> {"1", "2", "3", "4" };
+        List<String> Statuses = new List<String> { "testStatus1", "testStatus2", "testStatus3" };
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +33,7 @@ namespace Project_Wulkanizacja
 
         private void RecordInsertButton_Click(object sender, RoutedEventArgs e)
         {
-            InsertRecordWindow insertRecordWindow = new InsertRecordWindow();
+            InsertRecordWindow insertRecordWindow = new InsertRecordWindow(WheelOrTire, Qualities, WarehouseNumbers, Statuses);
             //ShowDialog() blokuje interakcje z oknem, w którym wywołane zostało nowe
             //w przeciwieństwie do Show()
             insertRecordWindow.ShowDialog();

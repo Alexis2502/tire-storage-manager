@@ -17,11 +17,28 @@ namespace Project_Wulkanizacja
     /// <summary>
     /// Logika interakcji dla klasy InsertRecordWindow.xaml
     /// </summary>
+
     public partial class InsertRecordWindow : Window
     {
-        public InsertRecordWindow()
+        List<String> WheelOrTire;
+        List<String> Qualities;
+        List<String> WarehouseNumbers;
+        List<String> Statuses;
+
+
+        public InsertRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> warehouseNumbers, List<String> statuses)
         {
+            WheelOrTire = wheelOrTire;
+            Qualities = qualities;
+            WarehouseNumbers = warehouseNumbers;
+            Statuses = statuses;
+
             InitializeComponent();
+
+            InsertWheelTireComboBox.ItemsSource = WheelOrTire;
+            InsertQualityComboBox.ItemsSource = Qualities;
+            InsertWarehouseComboBox.ItemsSource = WarehouseNumbers;
+            InsertStatusComboBox.ItemsSource = Statuses;
         }
     }
 }
