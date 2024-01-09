@@ -17,9 +17,9 @@ namespace Project_Wulkanizacja
     /// <summary>
     /// Logika interakcji dla klasy InsertRecordWindow.xaml
     /// </summary>
-    public partial class InsertRecordWindow : Window
+    public partial class UpdateRecordWindow : Window
     {
-        public InsertRecordWindow()
+        public UpdateRecordWindow()
         {
             InitializeComponent();
         }

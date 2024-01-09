@@ -24,5 +24,23 @@ namespace Project_Wulkanizacja
         {
             InitializeComponent();
         }
+
+        private void RecordInsertButton_Click(object sender, RoutedEventArgs e)
+        {
+            InsertRecordWindow insertRecordWindow = new InsertRecordWindow();
+            //ShowDialog() blokuje interakcje z oknem, w którym wywołane zostało nowe
+            //w przeciwieństwie do Show()
+            insertRecordWindow.ShowDialog();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HideRemarks(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
