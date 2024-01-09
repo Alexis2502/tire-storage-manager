@@ -66,5 +66,10 @@ namespace Project_Wulkanizacja
         {
 
         }
+
+        private void SaveRemark(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
