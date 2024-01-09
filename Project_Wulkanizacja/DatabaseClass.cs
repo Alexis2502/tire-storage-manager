@@ -28,7 +28,7 @@ namespace Project_Wulkanizacja
         private void Initialize()
         {
             List<String> source = new List<String>();
-            using (StreamReader r = new StreamReader("data.json"))
+            using (StreamReader r = new StreamReader("credentials.json"))
             {
                 string json = r.ReadToEnd();
                 source = JsonSerializer.Deserialize<List<String>>(json);
@@ -84,9 +84,9 @@ namespace Project_Wulkanizacja
                 return false;
             }
         }
-        public void Insert()
+        public void Insert(String valuesString)
         {
-            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, kola/opony, rozmiar, jakosc, nr_magazynu, status) VALUES(#)";
+            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, kola/opony, rozmiar, jakosc, nr_magazynu, status) VALUES("+valuesString+")";
 
             if (this.OpenConnection() == true)
             {
@@ -99,7 +99,7 @@ namespace Project_Wulkanizacja
         }
 
         public void Update()
-        {
+        {//
             string query = "UPDATE opony SET # WHERE #";
 
             if (this.OpenConnection() == true)

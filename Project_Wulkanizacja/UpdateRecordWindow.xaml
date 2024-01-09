@@ -1,0 +1,27 @@
+﻿<Window x:Class="Project_Wulkanizacja.UpdateRecordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Wulkanizacja"
+        mc:Ignorable="d"
+        Title="InsertRecordWindow" Height="450" Width="300">
+    <Grid Margin="0,0,0,0">
+        <Label Content="numer rejestracyjny:" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <TextBox x:Name="UpdateRegistrationNumberTextBox" HorizontalAlignment="Left" Margin="150,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="marka samochodu:" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <TextBox x:Name="UpdateCarBrandTextBox" HorizontalAlignment="Left" Margin="150,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="koła/opony:" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <ComboBox x:Name="UpdateWheelTireComboBox" HorizontalAlignment="Left" Margin="150,115,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
+        <Label Content="??rozmiar:" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <TextBox x:Name="UpdateSizeTextBox" HorizontalAlignment="Left" Margin="150,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="jakość:" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <ComboBox x:Name="UpdateQualityComboBox" HorizontalAlignment="Left" Margin="150,215,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
+        <Label Content="numer magazynu:" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <ComboBox x:Name="UpdateWarehouseComboBox" HorizontalAlignment="Left" Margin="150,265,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
+        <Label Content="status:" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <ComboBox x:Name="UpdateStatusComboBox" HorizontalAlignment="Left" Margin="150,315,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
+        <Button x:Name="UpdateButton" Content="Zaktualizuj" HorizontalAlignment="Center" Margin="0,375,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
+
+    </Grid>
+</Window>
