@@ -26,17 +26,31 @@ namespace Project_Wulkanizacja
         List<String> Qualities;
         List<String> Statuses;
 
-        public UpdateRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> statuses)
+        StorageEntry StorageEntryToBeEdited;
+
+        public UpdateRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> statuses, StorageEntry storageEntry)
         {
             WheelOrTire = wheelOrTire;
             Qualities = qualities;
             Statuses = statuses;
+            StorageEntryToBeEdited = storageEntry;
 
             InitializeComponent();
 
             UpdateWheelTireComboBox.ItemsSource = WheelOrTire;
             UpdateQualityComboBox.ItemsSource = Qualities;
             UpdateStatusComboBox.ItemsSource = Statuses;
+
+            //set initial textbox values
+            UpdateRegistrationNumberTextBox.Text = StorageEntryToBeEdited.nr_rejestracyjny;
+            UpdateCarBrandTextBox.Text = StorageEntryToBeEdited.marka_samochodu;
+            UpdateSizeTextBox.Text = StorageEntryToBeEdited.rozmiar;
+            UpdateWarehouseNumberTextBox.Text = StorageEntryToBeEdited.nr_magazynu.ToString();
+            
+            //set initial comboboxes' values
+            UpdateWheelTireComboBox.SelectedItem = StorageEntryToBeEdited.nr_rejestracyjny;
+            UpdateQualityComboBox.SelectedItem = StorageEntryToBeEdited.jakosc;
+            UpdateStatusComboBox.SelectedItem = StorageEntryToBeEdited.status;
         }
 
         private void UpdateRecord(object sender, RoutedEventArgs e)
@@ -45,13 +59,14 @@ namespace Project_Wulkanizacja
             {
                 String setString = "";
                 String valuesString = "";
-                valuesString += "'" + UpdateRegistrationNumberTextBox.Text.Trim() + "', ";
-                valuesString += "'" + UpdateCarBrandTextBox.Text.Trim() + "', ";
-                valuesString += "'" + UpdateWheelTireComboBox.Text.Trim() + ", ";
-                valuesString += "'" + UpdateSizeTextBox.Text.Trim() + ", ";
-                valuesString += "'" + UpdateQualityComboBox.Text.Trim() + "', ";
-                valuesString += "" + UpdateWarehouseNumberTextBox.Text.Trim() + ", ";
-                valuesString += "'" + UpdateStatusComboBox.Text.Trim() + "'";
+
+                setString += "'" + UpdateRegistrationNumberTextBox.Text.Trim() + "', ";
+                setString += "'" + UpdateCarBrandTextBox.Text.Trim() + "', ";
+                setString += "'" + UpdateWheelTireComboBox.Text.Trim() + ", ";
+                setString += "'" + UpdateSizeTextBox.Text.Trim() + ", ";
+                setString += "'" + UpdateQualityComboBox.Text.Trim() + "', ";
+                setString += "" + UpdateWarehouseNumberTextBox.Text.Trim() + ", ";
+                setString += "'" + UpdateStatusComboBox.Text.Trim() + "'";
 
 
                 dBConnect.Update();
