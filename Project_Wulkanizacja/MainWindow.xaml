@@ -22,7 +22,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="RemarkShowButton" Content="Pokaż uwagi" HorizontalAlignment="Left" Margin="10,746,0,0" VerticalAlignment="Top" Height="35" Width="600" IsEnabled="False" Click="ShowRemarks"/>
-        <Button x:Name="RemarkSaveButton" Content="Zapisz uwagi" HorizontalAlignment="Left" Margin="853,746,0,0" VerticalAlignment="Top" Height="35" Width="212" IsEnabled="False" Visibility="Hidden"/>
+        <Button x:Name="RemarkSaveButton" Content="Zapisz uwagi" HorizontalAlignment="Left" Margin="853,746,0,0" VerticalAlignment="Top" Height="35" Width="212" IsEnabled="False" Visibility="Hidden" Click="SaveRemark"/>
         <Rectangle HorizontalAlignment="Left" Height="544" Margin="1070,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>
         <Label Content="Filtry" HorizontalAlignment="Left" Margin="1220,90,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold" FontSize="20"/>
         <Rectangle HorizontalAlignment="Left" Height="37" Margin="1220,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="60"/>

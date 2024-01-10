@@ -29,6 +29,7 @@ namespace Project_Wulkanizacja
 
         List<StorageEntry> AllStorageEntries;
         StorageEntry SelectedStorageEntry;
+        StorageEntry PreviouslySelected;
 
         public MainWindow()
         {
@@ -49,6 +50,12 @@ namespace Project_Wulkanizacja
             RemarkShowButton.IsEnabled = true;
 
             SelectedStorageEntry = ResultsGrid.SelectedItem as StorageEntry;
+
+            if(RemarkTextBox.Visibility == Visibility.Visible)
+            {
+                RemarkTextBox.Text = SelectedStorageEntry.notatki;
+            }
+
         }
 
         private void RecordInsertButton_Click(object sender, RoutedEventArgs e)
@@ -83,16 +90,35 @@ namespace Project_Wulkanizacja
             RemarkSaveButton.Visibility = Visibility.Visible;            
             RemarkHideButton.IsEnabled = true;
             RemarkHideButton.Visibility = Visibility.Visible;
+            RemarkLabel.IsEnabled = true;
+            RemarkLabel.Visibility = Visibility.Visible;
+
+            RemarkTextBox.Text = SelectedStorageEntry.notatki;
         }
 
         private void HideRemarks(object sender, RoutedEventArgs e)
         {
-
+            RemarkTextBox.IsEnabled = false;
+            RemarkTextBox.Visibility = Visibility.Hidden;
+            RemarkSaveButton.IsEnabled = false;
+            RemarkSaveButton.Visibility = Visibility.Hidden;
+            RemarkHideButton.IsEnabled = false;
+            RemarkHideButton.Visibility = Visibility.Hidden;
+            RemarkLabel.IsEnabled = false;
+            RemarkLabel.Visibility = Visibility.Hidden;
         }
 
         private void SaveRemark(object sender, RoutedEventArgs e)
         {
+            string setString = "notatki='"+RemarkTextBox.Text+"'";
+            string afterWhereString = "id="+SelectedStorageEntry.id.ToString();
+            SelectedStorageEntry.notatki = RemarkTextBox.Text;
+            dBConnect.Update(setString, afterWhereString);
 
+            int id = SelectedStorageEntry.id;
+
+            AllStorageEntries = dBConnect.SelectFromTable();
+            SelectDataGridItemById(id);
         }
 
         private void SearchByRegistrationNumber(object sender, RoutedEventArgs e)
@@ -107,6 +133,18 @@ namespace Project_Wulkanizacja
                 String registrationAfterWhere = "'"+RegistrationInputTextBox.Text+"'";
                 AllStorageEntries = dBConnect.SelectLicenseFromTable(registrationAfterWhere);
                 ResultsGrid.ItemsSource = AllStorageEntries;
+            }
+        }
+
+        private void SelectDataGridItemById(int targetId)
+        {
+            foreach (StorageEntry entry in ResultsGrid.Items)
+            {
+                if(entry.id == targetId)
+                {
+                    ResultsGrid.SelectedItem = entry;
+                    break;
+                }
             }
         }
     }
