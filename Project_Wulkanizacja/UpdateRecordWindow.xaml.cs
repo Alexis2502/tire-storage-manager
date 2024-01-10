@@ -48,7 +48,7 @@ namespace Project_Wulkanizacja
             UpdateWarehouseNumberTextBox.Text = StorageEntryToBeEdited.nr_magazynu.ToString();
             
             //set initial comboboxes' values
-            UpdateWheelTireComboBox.SelectedItem = StorageEntryToBeEdited.nr_rejestracyjny;
+            UpdateWheelTireComboBox.SelectedItem = StorageEntryToBeEdited.kola_opony;
             UpdateQualityComboBox.SelectedItem = StorageEntryToBeEdited.jakosc;
             UpdateStatusComboBox.SelectedItem = StorageEntryToBeEdited.status;
         }
