@@ -136,7 +136,7 @@ namespace Project_Wulkanizacja
 
         public void Delete(String stringAfterWhere)
         {
-            string query = "DELETE FROM opony WHERE #";
+            string query = "DELETE FROM opony WHERE " + stringAfterWhere;
 
             if (this.OpenConnection() == true)
             {

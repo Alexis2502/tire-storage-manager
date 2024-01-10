@@ -20,17 +20,20 @@ namespace Project_Wulkanizacja
     public partial class ConfirmDeleteWindow : Window
     {
         DBConnect dBConnect = new DBConnect();
-        StorageEntry StorageEntry;
+        StorageEntry StorageEntryToDelete;
+        List<StorageEntry> StorageEntryAsList = new List<StorageEntry>();
 
         public ConfirmDeleteWindow(StorageEntry storageEntry)
         {
             InitializeComponent();
-            StorageEntry = storageEntry;
+            StorageEntryToDelete = storageEntry;
+            StorageEntryAsList.Add(StorageEntryToDelete);
+            DataGridWithRecordToBeDeleted.ItemsSource = StorageEntryAsList;
         }
 
         private void ConfirmDeleteClick(object sender, RoutedEventArgs e)
         {
-            String toPutAfterWhere = "id=" + StorageEntry.id.ToString();
+            String toPutAfterWhere = "id=" + StorageEntryToDelete.id.ToString();
             dBConnect.Delete(toPutAfterWhere);
             this.Close();
         }
