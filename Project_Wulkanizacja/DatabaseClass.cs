@@ -134,7 +134,7 @@ namespace Project_Wulkanizacja
             }
         }
 
-        public void Delete()
+        public void Delete(int id)
         {
             string query = "DELETE FROM opony WHERE #";
 

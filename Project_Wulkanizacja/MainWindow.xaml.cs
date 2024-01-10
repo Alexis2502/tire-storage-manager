@@ -66,7 +66,8 @@ namespace Project_Wulkanizacja
 
         private void DeleteRecord(object sender, RoutedEventArgs e)
         {
-
+            ConfirmDeleteWindow confirmDeleteWindow = new ConfirmDeleteWindow(SelectedStorageEntry);
+            confirmDeleteWindow.ShowDialog();
         }
 
         private void ShowRemarks(object sender, RoutedEventArgs e)
