@@ -99,7 +99,8 @@ namespace Project_Wulkanizacja
             }
             else
             {
-                AllStorageEntries = dBConnect.SelectLicenseFromTable(RegistrationInputTextBox.Text);
+                String registrationAfterWhere = "'"+RegistrationInputTextBox.Text+"'";
+                AllStorageEntries = dBConnect.SelectLicenseFromTable(registrationAfterWhere);
                 ResultsGrid.ItemsSource = AllStorageEntries;
             }
         }
