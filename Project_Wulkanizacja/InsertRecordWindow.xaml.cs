@@ -25,22 +25,19 @@ namespace Project_Wulkanizacja
 
         List<String> WheelOrTire;
         List<String> Qualities;
-        List<String> WarehouseNumbers;
         List<String> Statuses;
 
 
-        public InsertRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> warehouseNumbers, List<String> statuses)
+        public InsertRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> statuses)
         {
             WheelOrTire = wheelOrTire;
             Qualities = qualities;
-            WarehouseNumbers = warehouseNumbers;
             Statuses = statuses;
 
             InitializeComponent();
 
             InsertWheelTireComboBox.ItemsSource = WheelOrTire;
             InsertQualityComboBox.ItemsSource = Qualities;
-            InsertWarehouseComboBox.ItemsSource = WarehouseNumbers;
             InsertStatusComboBox.ItemsSource = Statuses;
         }
 
@@ -49,13 +46,13 @@ namespace Project_Wulkanizacja
             if (IsSetCorrectly())
             {
                 String valuesString = "";
-                valuesString += "'" + InsertRegistrationNumberTextBox.Text + "', ";
+                valuesString += "'" + InsertRegistrationNumberTextBox.Text.Trim() + "', ";
                 valuesString += "'" + InsertCarBrandTextBox.Text + "', ";
-                valuesString += "'" + InsertWheelTireComboBox.Text + ", ";
-                valuesString += InsertSizeTextBox.Text + ", ";
-                valuesString += "'" + InsertQualityComboBox.Text + "', ";
-                valuesString += "'" + InsertWarehouseComboBox.Text + "', ";
-                valuesString += "'" + InsertStatusComboBox.Text + "'";
+                valuesString += "'" + InsertWheelTireComboBox.Text.Trim() + ", ";
+                valuesString += "'" + InsertSizeTextBox.Text.Trim() + ", ";
+                valuesString += "'" + InsertQualityComboBox.Text.Trim() + "', ";
+                valuesString += "" + InsertWarehouseNumberTextBox.Text.Trim() + ", ";
+                valuesString += "'" + InsertStatusComboBox.Text.Trim() + "'";
 
                 dBConnect.Insert(valuesString);
 
@@ -69,23 +66,23 @@ namespace Project_Wulkanizacja
 
         private bool IsSetCorrectly()
         {
-            if (!(string.IsNullOrWhiteSpace(InsertRegistrationNumberTextBox.Text) && string.IsNullOrWhiteSpace(InsertCarBrandTextBox.Text) && InsertWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(InsertSizeTextBox.Text) && InsertWarehouseComboBox == null && InsertStatusComboBox == null))
+            if (!(string.IsNullOrWhiteSpace(InsertRegistrationNumberTextBox.Text.Trim()) && string.IsNullOrWhiteSpace(InsertCarBrandTextBox.Text.Trim()) && InsertWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(InsertSizeTextBox.Text.Trim()) && InsertWarehouseNumberTextBox == null && InsertStatusComboBox == null))
             {
-                if(int.TryParse(InsertSizeTextBox.Text, out int parsedSize)){
+                if (int.TryParse(InsertSizeTextBox.Text.Trim(), out int parsedSize) && int.TryParse(InsertWarehouseNumberTextBox.Text.Trim(), out int parsed2))
+                {
+                    if (!(parsed2 > 0 && parsed2 <= 210))
+                    {
+                        return false;
+                    }
                     return true;
                 }
                 else
                 {
                     return false;
                 }
-                
+
             }
             return false;
-        }
-
-        private void InsertCarBrandTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

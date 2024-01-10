@@ -24,21 +24,18 @@ namespace Project_Wulkanizacja
 
         List<String> WheelOrTire;
         List<String> Qualities;
-        List<String> WarehouseNumbers;
         List<String> Statuses;
 
-        public UpdateRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> warehouseNumbers, List<String> statuses)
+        public UpdateRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> statuses)
         {
             WheelOrTire = wheelOrTire;
             Qualities = qualities;
-            WarehouseNumbers = warehouseNumbers;
             Statuses = statuses;
 
             InitializeComponent();
 
             UpdateWheelTireComboBox.ItemsSource = WheelOrTire;
             UpdateQualityComboBox.ItemsSource = Qualities;
-            UpdateWarehouseComboBox.ItemsSource = WarehouseNumbers;
             UpdateStatusComboBox.ItemsSource = Statuses;
         }
 
@@ -51,12 +48,10 @@ namespace Project_Wulkanizacja
                 valuesString += "'" + UpdateRegistrationNumberTextBox.Text + "', ";
                 valuesString += "'" + UpdateCarBrandTextBox.Text + "', ";
                 valuesString += "'" + UpdateWheelTireComboBox.Text + ", ";
-                valuesString += UpdateSizeTextBox.Text + ", ";
+                valuesString += "'" + UpdateSizeTextBox.Text + ", ";
                 valuesString += "'" + UpdateQualityComboBox.Text + "', ";
-                valuesString += "'" + UpdateWarehouseComboBox.Text + "', ";
+                valuesString += "" + UpdateWarehouseNumberTextBox.Text + ", ";
                 valuesString += "'" + UpdateStatusComboBox.Text + "'";
-
-
 
 
                 dBConnect.Update();
@@ -71,10 +66,14 @@ namespace Project_Wulkanizacja
 
         private bool IsSetCorrectly()
         {
-            if (!(string.IsNullOrWhiteSpace(UpdateRegistrationNumberTextBox.Text) && string.IsNullOrWhiteSpace(UpdateCarBrandTextBox.Text) && UpdateWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(UpdateSizeTextBox.Text) && UpdateWarehouseComboBox == null && UpdateStatusComboBox == null))
+            if (!(string.IsNullOrWhiteSpace(UpdateRegistrationNumberTextBox.Text) && string.IsNullOrWhiteSpace(UpdateCarBrandTextBox.Text) && UpdateWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(UpdateSizeTextBox.Text) && UpdateWarehouseNumberTextBox == null && UpdateStatusComboBox == null))
             {
-                if (int.TryParse(UpdateSizeTextBox.Text, out int parsedSize))
+                if (int.TryParse(UpdateSizeTextBox.Text, out int parsedSize) && int.TryParse(UpdateWarehouseNumberTextBox.Text, out int parsed2))
                 {
+                    if (!(parsed2 > 0 && parsed2 <= 210))
+                    {
+                        return false;
+                    }
                     return true;
                 }
                 else
