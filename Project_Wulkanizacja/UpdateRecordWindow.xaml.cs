@@ -61,7 +61,7 @@ namespace Project_Wulkanizacja
                 String afterWhereString = "id="+StorageEntryToBeEdited.id;
 
                 setString += "nr_rejestracyjny='" + UpdateRegistrationNumberTextBox.Text.Trim() + "', ";
-                setString += "marka_samochodu'" + UpdateCarBrandTextBox.Text.Trim() + "', ";
+                setString += "marka_samochodu='" + UpdateCarBrandTextBox.Text.Trim() + "', ";
                 setString += "kola_opony='" + UpdateWheelTireComboBox.Text.Trim() + "', ";
                 setString += "rozmiar='" + UpdateSizeTextBox.Text.Trim() + "', ";
                 setString += "jakosc='" + UpdateQualityComboBox.Text.Trim() + "', ";
