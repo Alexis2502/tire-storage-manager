@@ -62,7 +62,7 @@ namespace Project_Wulkanizacja
 
                 setString += "nr_rejestracyjny='" + UpdateRegistrationNumberTextBox.Text.Trim() + "', ";
                 setString += "marka_samochodu'" + UpdateCarBrandTextBox.Text.Trim() + "', ";
-                setString += "`kola/opony`='" + UpdateWheelTireComboBox.Text.Trim() + "', ";
+                setString += "kola_opony='" + UpdateWheelTireComboBox.Text.Trim() + "', ";
                 setString += "rozmiar='" + UpdateSizeTextBox.Text.Trim() + "', ";
                 setString += "jakosc='" + UpdateQualityComboBox.Text.Trim() + "', ";
                 setString += "nr_magazynu=" + UpdateWarehouseNumberTextBox.Text.Trim() + ", ";

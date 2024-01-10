@@ -82,7 +82,7 @@ namespace Project_Wulkanizacja
         }
         public void Insert(String valuesString)
         {
-            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, `kola/opony`, rozmiar, jakosc, nr_magazynu, status) VALUES("+valuesString+")";
+            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, kola_opony, rozmiar, jakosc, nr_magazynu, status) VALUES("+valuesString+")";
 
             if (this.OpenConnection() == true)
             {
@@ -97,7 +97,7 @@ namespace Project_Wulkanizacja
         public List<StorageEntry> SelectFromTable()
         {
             List<StorageEntry> results = new List<StorageEntry>();
-            string query = "SELECT * FROM opony";
+            string query = "SELECT id, nr_rejestracyjny, marka_samochodu, kola_opony, rozmiar, jakosc, nr_magazynu, status, notatki FROM opony";
 
             if (this.OpenConnection() == true)
             {
