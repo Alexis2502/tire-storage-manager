@@ -58,18 +58,19 @@ namespace Project_Wulkanizacja
             if (IsSetCorrectly())
             {
                 String setString = "";
-                String valuesString = "";
+                String afterWhereString = "id="+StorageEntryToBeEdited.id;
 
-                setString += "'" + UpdateRegistrationNumberTextBox.Text.Trim() + "', ";
-                setString += "'" + UpdateCarBrandTextBox.Text.Trim() + "', ";
-                setString += "'" + UpdateWheelTireComboBox.Text.Trim() + ", ";
-                setString += "'" + UpdateSizeTextBox.Text.Trim() + ", ";
-                setString += "'" + UpdateQualityComboBox.Text.Trim() + "', ";
-                setString += "" + UpdateWarehouseNumberTextBox.Text.Trim() + ", ";
-                setString += "'" + UpdateStatusComboBox.Text.Trim() + "'";
+                setString += "nr_rejestracyjny='" + UpdateRegistrationNumberTextBox.Text.Trim() + "', ";
+                setString += "marka_samochodu'" + UpdateCarBrandTextBox.Text.Trim() + "', ";
+                setString += "`kola/opony`='" + UpdateWheelTireComboBox.Text.Trim() + ", ";
+                setString += "rozmiar='" + UpdateSizeTextBox.Text.Trim() + ", ";
+                setString += "jakosc='" + UpdateQualityComboBox.Text.Trim() + "', ";
+                setString += "nr_magazynu=" + UpdateWarehouseNumberTextBox.Text.Trim() + ", ";
+                setString += "status='" + UpdateStatusComboBox.Text.Trim() + "'";
 
 
-                dBConnect.Update();
+
+                dBConnect.Update(setString, afterWhereString);
 
             }
             else

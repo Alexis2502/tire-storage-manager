@@ -122,9 +122,9 @@ namespace Project_Wulkanizacja
             return results;
         }
 
-        public void Update()
+        public void Update(String setString, String afterWHereString)
         {
-            string query = "UPDATE opony SET # WHERE #";
+            string query = "UPDATE opony SET "+setString+" WHERE "+afterWHereString;
 
             if (this.OpenConnection() == true)
             {
@@ -134,7 +134,7 @@ namespace Project_Wulkanizacja
             }
         }
 
-        public void Delete(int id)
+        public void Delete(String stringAfterWhere)
         {
             string query = "DELETE FROM opony WHERE #";
 
