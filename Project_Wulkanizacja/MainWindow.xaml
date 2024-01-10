@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Rejestracja" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="RegistrationInputTextBox" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Height="30"/>
-        <Button x:Name="RegistrationSearchButton" Content="Szukaj" HorizontalAlignment="Left" Margin="225,41,0,0" VerticalAlignment="Top" Width="104" Height="30"/>
+        <Button x:Name="RegistrationSearchButton" Content="Szukaj" HorizontalAlignment="Left" Margin="225,41,0,0" VerticalAlignment="Top" Width="104" Height="30" Click="SearchByRegistrationNumber"/>
         <DataGrid x:Name="ResultsGrid" AutoGenerateColumns="False" Margin="10,76,375,184" SelectionChanged="DataGrid_SelectionChanged" Width="1050" Height="544" IsReadOnly="true">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="numer rejestracyjny" Binding="{Binding nr_rejestracyjny}"/>
