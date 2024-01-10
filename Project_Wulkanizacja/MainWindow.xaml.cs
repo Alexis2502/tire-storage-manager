@@ -54,20 +54,24 @@ namespace Project_Wulkanizacja
         private void RecordInsertButton_Click(object sender, RoutedEventArgs e)
         {
             InsertRecordWindow insertRecordWindow = new InsertRecordWindow(WheelOrTire, Qualities, Statuses);
-            //ShowDialog() blokuje interakcje z oknem, w którym wywołane zostało nowe
-            //w przeciwieństwie do Show()
             insertRecordWindow.ShowDialog();
+            AllStorageEntries = dBConnect.SelectFromTable();
+            ResultsGrid.ItemsSource = AllStorageEntries;
         }
 
         private void UpdateRecord(object sender, RoutedEventArgs e)
         {
             UpdateRecordWindow updateRecordWindow = new UpdateRecordWindow(WheelOrTire, Qualities, Statuses, SelectedStorageEntry);
+            AllStorageEntries = dBConnect.SelectFromTable();
+            ResultsGrid.ItemsSource = AllStorageEntries;
         }
 
         private void DeleteRecord(object sender, RoutedEventArgs e)
         {
             ConfirmDeleteWindow confirmDeleteWindow = new ConfirmDeleteWindow(SelectedStorageEntry);
             confirmDeleteWindow.ShowDialog();
+            AllStorageEntries = dBConnect.SelectFromTable();
+            ResultsGrid.ItemsSource = AllStorageEntries;
         }
 
         private void ShowRemarks(object sender, RoutedEventArgs e)
@@ -90,10 +94,12 @@ namespace Project_Wulkanizacja
             if(RegistrationInputTextBox.Text.Trim() == String.Empty)
             {
                 AllStorageEntries = dBConnect.SelectFromTable();
+                ResultsGrid.ItemsSource = AllStorageEntries;
             }
             else
             {
-                dBConnect.SelectLicenseFromTable(RegistrationInputTextBox.Text);
+                AllStorageEntries = dBConnect.SelectLicenseFromTable(RegistrationInputTextBox.Text);
+                ResultsGrid.ItemsSource = AllStorageEntries;
             }
         }
     }

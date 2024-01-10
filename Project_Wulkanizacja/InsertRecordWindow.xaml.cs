@@ -55,7 +55,7 @@ namespace Project_Wulkanizacja
                 valuesString += "'" + InsertStatusComboBox.Text.Trim() + "'";
 
                 dBConnect.Insert(valuesString);
-
+                this.Close();
             }
             else
             {
