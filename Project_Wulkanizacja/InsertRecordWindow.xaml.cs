@@ -48,8 +48,8 @@ namespace Project_Wulkanizacja
                 String valuesString = "";
                 valuesString += "'" + InsertRegistrationNumberTextBox.Text.Trim() + "', ";
                 valuesString += "'" + InsertCarBrandTextBox.Text + "', ";
-                valuesString += "'" + InsertWheelTireComboBox.Text.Trim() + ", ";
-                valuesString += "'" + InsertSizeTextBox.Text.Trim() + ", ";
+                valuesString += "'" + InsertWheelTireComboBox.Text.Trim() + "', ";
+                valuesString += "'" + InsertSizeTextBox.Text.Trim() + "', ";
                 valuesString += "'" + InsertQualityComboBox.Text.Trim() + "', ";
                 valuesString += "" + InsertWarehouseNumberTextBox.Text.Trim() + ", ";
                 valuesString += "'" + InsertStatusComboBox.Text.Trim() + "'";

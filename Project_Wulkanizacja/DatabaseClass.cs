@@ -82,7 +82,7 @@ namespace Project_Wulkanizacja
         }
         public void Insert(String valuesString)
         {
-            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, kola/opony, rozmiar, jakosc, nr_magazynu, status, notatki) VALUES("+valuesString+")";
+            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, `kola/opony`, rozmiar, jakosc, nr_magazynu, status) VALUES("+valuesString+")";
 
             if (this.OpenConnection() == true)
             {

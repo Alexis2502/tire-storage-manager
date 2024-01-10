@@ -61,7 +61,7 @@ namespace Project_Wulkanizacja
 
         private void UpdateRecord(object sender, RoutedEventArgs e)
         {
-            UpdateRecordWindow updateRecordWindow = new UpdateRecordWindow(WheelOrTire, Qualities, Statuses);
+            UpdateRecordWindow updateRecordWindow = new UpdateRecordWindow(WheelOrTire, Qualities, Statuses, SelectedStorageEntry);
         }
 
         private void DeleteRecord(object sender, RoutedEventArgs e)
