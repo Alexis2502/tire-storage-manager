@@ -77,7 +77,12 @@ namespace Project_Wulkanizacja
 
         private void ShowRemarks(object sender, RoutedEventArgs e)
         {
-
+            RemarkTextBox.IsEnabled = true;
+            RemarkTextBox.Visibility = Visibility.Visible;            
+            RemarkSaveButton.IsEnabled = true;
+            RemarkSaveButton.Visibility = Visibility.Visible;            
+            RemarkHideButton.IsEnabled = true;
+            RemarkHideButton.Visibility = Visibility.Visible;
         }
 
         private void HideRemarks(object sender, RoutedEventArgs e)
