@@ -71,7 +71,7 @@ namespace Project_Wulkanizacja
 
 
                 dBConnect.Update(setString, afterWhereString);
-
+                this.Close();
             }
             else
             {
