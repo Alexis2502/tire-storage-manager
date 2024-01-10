@@ -62,6 +62,7 @@ namespace Project_Wulkanizacja
         private void UpdateRecord(object sender, RoutedEventArgs e)
         {
             UpdateRecordWindow updateRecordWindow = new UpdateRecordWindow(WheelOrTire, Qualities, Statuses, SelectedStorageEntry);
+            updateRecordWindow.ShowDialog();
             AllStorageEntries = dBConnect.SelectFromTable();
             ResultsGrid.ItemsSource = AllStorageEntries;
         }
