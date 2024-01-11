@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Wulkanizacja"
         mc:Ignorable="d"
-        Title="Potwierdź usunięcie" Height="350" Width="800">
+        Title="Potwierdź usunięcie" Height="350" Width="800" MinHeight="350" MaxHeight="350" MinWidth="800" MaxWidth="800">
     <Grid>
         <DataGrid x:Name="DataGridWithRecordToBeDeleted" AutoGenerateColumns="False" IsReadOnly="True" Height="75" Width="100" Margin="25,82,25,177">
             <DataGrid.Columns>

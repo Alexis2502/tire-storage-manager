@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Wulkanizacja"
         mc:Ignorable="d"
-        Title="MainWindow" Height="830" Width="1440" MinHeight="830" MinWidth="1440" MaxHeight="830" MaxWidth="1440">
+        Title="Magazyn opon" Height="830" Width="1440" MinHeight="830" MinWidth="1440" MaxHeight="830" MaxWidth="1440">
     <Grid>
         <Label Content="Rejestracja" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="RegistrationInputTextBox" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Height="30"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Wulkanizacja"
         mc:Ignorable="d"
-        Title="MessageWindow" Height="180" Width="450">
+        Title="Komunikat" Height="180" Width="450" MinHeight="180" MaxHeight="180" MinWidth="450" MaxWidth="450">
     <Grid>
         <Button x:Name="OkButton" Content="ok" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" Height="50" Width="100" FontWeight="Normal" FontSize="24" FontStyle="Normal" Click="CloseWindow"/>
         <Label x:Name="MessageDisplayLabel" Content="" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="400" Height="45" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
