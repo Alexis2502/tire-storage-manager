@@ -154,27 +154,16 @@ namespace Project_Wulkanizacja
 
         private void SelectDataGridItemById(int targetId)
         {
-            //bool broken = false;
+
             foreach (StorageEntry entry in ResultsGrid.Items)
             {
                 if(entry.id == targetId)
                 {
                     ResultsGrid.SelectedItem = entry;
-                    //broken = true;
+
                     break;
                 }
             }
-            //if(broken == false)
-            //{
-            //    RemarkTextBox.IsEnabled = false;
-            //    RemarkTextBox.Visibility = Visibility.Hidden;
-            //    RemarkSaveButton.IsEnabled = false;
-            //    RemarkSaveButton.Visibility = Visibility.Hidden;
-            //    RemarkHideButton.IsEnabled = false;
-            //    RemarkHideButton.Visibility = Visibility.Hidden;
-            //    RemarkLabel.IsEnabled = false;
-            //    RemarkLabel.Visibility = Visibility.Hidden;
-            //}
 
         }
 
