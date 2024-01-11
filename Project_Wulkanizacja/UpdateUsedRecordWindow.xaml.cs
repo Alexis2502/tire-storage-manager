@@ -58,10 +58,7 @@ namespace Project_Wulkanizacja
         {
             if (!(string.IsNullOrWhiteSpace(UpdateSizeTextBox.Text.Trim()) && string.IsNullOrWhiteSpace(UpdatePriceTextBox.Text.Trim())))
             {
-                if (float.TryParse(UpdateSizeTextBox.Text.Trim(), out float parsedSize))
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }
