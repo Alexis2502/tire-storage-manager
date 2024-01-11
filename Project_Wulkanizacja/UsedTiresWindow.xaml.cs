@@ -79,7 +79,8 @@ namespace Project_Wulkanizacja
 
         private void SelectAll(object sender, RoutedEventArgs e)
         {
-
+            UsedStorageEntries = usedDBConnect.SelectFromTable();
+            UsedResultsGrid.ItemsSource = UsedStorageEntries;
         }
     }
 }
