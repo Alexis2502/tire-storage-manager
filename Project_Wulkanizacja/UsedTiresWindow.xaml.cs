@@ -57,7 +57,10 @@ namespace Project_Wulkanizacja
 
         private void UpdateRecordClick(object sender, RoutedEventArgs e)
         {
-
+            UpdateUsedRecordWindow updateUsedRecordWindow = new UpdateUsedRecordWindow(SelectedUsedEntry);
+            updateUsedRecordWindow.ShowDialog();
+            UsedStorageEntries = usedDBConnect.SelectFromTable();
+            UsedResultsGrid.ItemsSource = UsedStorageEntries;
         }
 
         private void InsertRecord(object sender, RoutedEventArgs e)

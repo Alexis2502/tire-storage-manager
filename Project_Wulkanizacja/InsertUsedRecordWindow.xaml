@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Wulkanizacja"
         mc:Ignorable="d"
-        Title="Dodaj zużytą oponę" Height="200" Width="250">
+        Title="Dodaj opony używane" Height="200" Width="250">
     <Grid>
         <Label Content="rozmiar:" HorizontalAlignment="Left" Margin="-46,26,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
         <TextBox x:Name="InsertSizeTextBox" HorizontalAlignment="Left" Margin="94,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

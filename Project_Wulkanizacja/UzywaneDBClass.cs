@@ -122,9 +122,9 @@ namespace Project_Wulkanizacja
             return results;
         }
 
-        public void Update()
+        public void Update(String setString, String afterWhereString)
         {
-            string query = "UPDATE uzywane_opony SET # WHERE #";
+            string query = "UPDATE uzywane_opony SET "+ setString +" WHERE " + afterWhereString;
 
             if (this.OpenConnection() == true)
             {
