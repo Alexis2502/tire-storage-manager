@@ -45,11 +45,28 @@ namespace Project_Wulkanizacja
 
         private void DataGrid_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            RecordEditButton.IsEnabled = true;
-            RecordDeleteButton.IsEnabled = true;
-            RemarkShowButton.IsEnabled = true;
-
             SelectedStorageEntry = ResultsGrid.SelectedItem as StorageEntry;
+
+            if(SelectedStorageEntry == null)
+            {
+                RecordEditButton.IsEnabled = false;
+                RecordDeleteButton.IsEnabled = false;
+                RemarkShowButton.IsEnabled = false;
+                RemarkTextBox.IsEnabled = false;
+                RemarkTextBox.Visibility = Visibility.Hidden;
+                RemarkLabel.IsEnabled = false;
+                RemarkLabel.Visibility = Visibility.Hidden;
+                RemarkSaveButton.IsEnabled = false;
+                RemarkSaveButton.Visibility = Visibility.Hidden;
+                RemarkHideButton.IsEnabled = false;
+                RemarkHideButton.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                RecordEditButton.IsEnabled = true;
+                RecordDeleteButton.IsEnabled = true;
+                RemarkShowButton.IsEnabled = true;
+            }
 
             if(RemarkTextBox.Visibility == Visibility.Visible && IsIdInShownRecords(TargetId))
             {

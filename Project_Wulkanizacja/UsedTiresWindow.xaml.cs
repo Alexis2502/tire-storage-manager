@@ -36,8 +36,18 @@ namespace Project_Wulkanizacja
         {
             SelectedUsedEntry = UsedResultsGrid.SelectedItem as UsedEntry;
 
-            UpdateRecordButton.IsEnabled = true;
-            DeleteRecordButton.IsEnabled = true;
+            if(SelectedUsedEntry == null)
+            {
+                UpdateRecordButton.IsEnabled = false;
+                DeleteRecordButton.IsEnabled = false;
+            }
+            else
+            {
+                UpdateRecordButton.IsEnabled = true;
+                DeleteRecordButton.IsEnabled = true;
+            }
+
+
         }
 
         private void GoToWulkanizacja(object sender, RoutedEventArgs e)
