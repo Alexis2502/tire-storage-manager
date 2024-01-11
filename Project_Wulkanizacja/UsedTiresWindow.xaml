@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Wulkanizacja"
         mc:Ignorable="d"
-        Title="Opony używane" Height="600" Width="470">
+        Title="Opony używane" Height="500" Width="470" MinHeight="500" MaxHeight="900" MinWidth="470" MaxWidth="470">
     <Grid>
         <DataGrid x:Name="UsedResultsGrid" AutoGenerateColumns="False" SelectionChanged="UsedResultsGridSelectionChanged" Margin="10,10,0,10" Width="220" IsReadOnly="True" HorizontalAlignment="Left">
             <DataGrid.Columns>

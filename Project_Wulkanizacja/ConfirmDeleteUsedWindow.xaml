@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Potwierdź usunięcie" Height="350" Width="800">
     <Grid>
-        <DataGrid x:Name="DataGridWithRecordToBeDeleted" AutoGenerateColumns="False" IsReadOnly="True" Height="75" Width="750" Margin="25,82,25,177">
+        <DataGrid x:Name="DataGridWithRecordToBeDeleted" AutoGenerateColumns="False" IsReadOnly="True" Height="75" Width="100" Margin="25,82,25,177">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="rozmiar" Binding="{Binding rozmiar}"/>
                 <DataGridTextColumn Header="cena" Binding="{Binding cena}"/>
