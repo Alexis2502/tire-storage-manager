@@ -1,0 +1,26 @@
+﻿<Window x:Class="Project_Wulkanizacja.UsedTiresWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Wulkanizacja"
+        mc:Ignorable="d"
+        Title="Opony używane" Height="600" Width="450">
+    <Grid>
+        <DataGrid x:Name="UsedResultsGrid" AutoGenerateColumns="False" SelectionChanged="UsedResultsGridSelectionChanged" Margin="10,10,0,10" Width="200" IsReadOnly="True" HorizontalAlignment="Left">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="rozmiar" Binding="{Binding rozmiar}" Width="100"/>
+                <DataGridTextColumn Header="cena" Binding="{Binding cena}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="SearchAllButton" Content="Wyszukaj wszystkie" HorizontalAlignment="Left" Margin="215,10,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="SelectAll"/>
+        <Button x:Name="SearchBySizeButton" Content="Wyszukaj po rozmiarze" HorizontalAlignment="Left" Margin="215,100,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="SearchBySize"/>
+        <TextBox x:Name="SearchUsedSizeTExtBox" HorizontalAlignment="Left" Margin="290,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="40" FontSize="14"/>
+        <Button x:Name="InsertRecordButton" Content="Dodaj wpis" HorizontalAlignment="Left" Margin="215,200,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="InsertRecord"/>
+        <Button x:Name="UpdateRecordButton" Content="Edytuj wpis" HorizontalAlignment="Left" Margin="215,245,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="UpdateRecordClick" IsEnabled="False"/>
+        <Button x:Name="DeleteRecordButton" Content="Usuń wpis" HorizontalAlignment="Left" Margin="215,290,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="DeleteRecord" IsEnabled="false"/>
+        <Button x:Name="GoToWulkanizacjaButton" Content="Przejdź do magazynu opon" HorizontalAlignment="Left" Margin="215,396,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="GoToWulkanizacja"/>
+        <Label Content="rozmiar:" HorizontalAlignment="Left" Margin="215,55,0,0" VerticalAlignment="Top" Width="70" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="16"/>
+
+    </Grid>
+</Window>

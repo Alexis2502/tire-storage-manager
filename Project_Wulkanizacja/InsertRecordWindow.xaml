@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Wulkanizacja"
         mc:Ignorable="d"
-        Title="InsertRecordWindow" Height="450" Width="350">
+        Title="Dodaj wpis magazynu" Height="450" Width="350">
     <Grid Margin="0,0,0,0">
         <Label Content="numer rejestracyjny:" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
         <TextBox x:Name="InsertRegistrationNumberTextBox" HorizontalAlignment="Left" Margin="150,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

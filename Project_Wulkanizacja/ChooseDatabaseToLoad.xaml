@@ -1,0 +1,14 @@
+﻿<Window x:Class="Project_Wulkanizacja.ChooseDatabaseToLoad"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Wulkanizacja"
+        mc:Ignorable="d"
+        Title="Wybór okna" Height="450" Width="810">
+    <Grid>
+        <Button x:Name="ChooseWulkanizacja" Content="Magazyn opon" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="414" Width="390" Click="ShowWulkanizacja" FontSize="48"/>
+        <Button x:Name="ChooseUsedTires" Content="Opony używane" HorizontalAlignment="Left" Margin="410,0,0,0" VerticalAlignment="Center" Height="414" Width="390" FontSize="48" Click="ShowUsedTires"/>
+
+    </Grid>
+</Window>

@@ -43,7 +43,8 @@
         <Button x:Name="RemarkHideButton" Content="Ukryj uwagi" HorizontalAlignment="Left" Margin="634,746,0,0" VerticalAlignment="Top" Height="35" Width="212" Click="HideRemarks" IsEnabled="False" Visibility="Hidden"/>
         <Button x:Name="RecordDeleteButton" Content="Usuń wpis" HorizontalAlignment="Left" Margin="10,705,0,0" VerticalAlignment="Top" Height="36" Width="600" IsEnabled="False" Click="DeleteRecord"/>
         <TextBox x:Name="FilterWarehouseNumberTextBox" HorizontalAlignment="Left" Margin="1255,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Height="30"/>
-        <Button x:Name="FilterClearButton" Content="Wyczyść filtry" HorizontalAlignment="Left" Margin="1197,507,0,0" VerticalAlignment="Top" Height="41" Width="106" Click="ClearFIlters"/>
+        <Button x:Name="FilterClearButton" Content="Wyczyść filtry" HorizontalAlignment="Left" Margin="1197,507,0,0" VerticalAlignment="Top" Height="41" Width="106" Click="ClearFilters"/>
+        <Button x:Name="GoToUsedTiresButton" Content="Przejdź do opon używanych" HorizontalAlignment="Left" Margin="1140,665,0,0" VerticalAlignment="Top" Height="90" Width="220" Click="GoToUsedTires"/>
 
     </Grid>
 </Window>

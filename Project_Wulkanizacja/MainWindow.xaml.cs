@@ -217,13 +217,20 @@ namespace Project_Wulkanizacja
             ResultsGrid.ItemsSource = AllStorageEntries;
         }
 
-        private void ClearFIlters(object sender, RoutedEventArgs e)
+        private void ClearFilters(object sender, RoutedEventArgs e)
         {
             FilterCarManufacturerTextBox.Text = "";
             FilterWheelTiresComboBox.SelectedValue = null;
             FilterQualityComboBox.SelectedValue = null;
             FilterWarehouseNumberTextBox.Text = "";
             FilterStatusComboBox.SelectedValue = null;
+        }
+
+        private void GoToUsedTires(object sender, RoutedEventArgs e)
+        {
+            UsedTiresWindow usedTiresWindow = new UsedTiresWindow();
+            usedTiresWindow.Show();
+            this.Close();
         }
     }
 }

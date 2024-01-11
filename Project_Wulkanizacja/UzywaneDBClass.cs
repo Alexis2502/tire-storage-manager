@@ -134,9 +134,9 @@ namespace Project_Wulkanizacja
             }
         }
 
-        public void Delete()
+        public void Delete(String afterWhere)
         {
-            string query = "DELETE FROM uzywane_opony WHERE #";
+            string query = "DELETE FROM uzywane_opony WHERE "+afterWhere;
 
             if (this.OpenConnection() == true)
             {

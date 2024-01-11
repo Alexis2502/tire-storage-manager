@@ -1,0 +1,17 @@
+﻿<Window x:Class="Project_Wulkanizacja.InsertUsedRecordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Wulkanizacja"
+        mc:Ignorable="d"
+        Title="Dodaj zużytą oponę" Height="200" Width="250">
+    <Grid>
+        <Label Content="rozmiar:" HorizontalAlignment="Left" Margin="-46,26,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <TextBox x:Name="InsertSizeTextBox" HorizontalAlignment="Left" Margin="94,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="cena:" HorizontalAlignment="Left" Margin="-46,72,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <TextBox x:Name="InsertPriceTextBox" HorizontalAlignment="Left" Margin="94,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="InsertUsedRecordButton" Content="Dodaj" HorizontalAlignment="Center" Margin="0,129,0,0" VerticalAlignment="Top" Width="150" Height="30" Click="InsertUsedEntry"/>
+
+    </Grid>
+</Window>
