@@ -74,7 +74,9 @@ namespace Project_Wulkanizacja
 
         private void SearchBySize(object sender, RoutedEventArgs e)
         {
-
+            String sizeToSearchBy = "'" + SearchUsedSizeTextBox.Text.Trim().ToLower() + "'";
+            UsedStorageEntries = usedDBConnect.SelectSizeFromTable(sizeToSearchBy);
+            UsedResultsGrid.ItemsSource = UsedStorageEntries;
         }
 
         private void SelectAll(object sender, RoutedEventArgs e)

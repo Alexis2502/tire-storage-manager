@@ -15,7 +15,7 @@
         </DataGrid>
         <Button x:Name="SearchAllButton" Content="Wyszukaj wszystkie" HorizontalAlignment="Left" Margin="245,10,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="SelectAll"/>
         <Button x:Name="SearchBySizeButton" Content="Wyszukaj po rozmiarze" HorizontalAlignment="Left" Margin="245,100,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="SearchBySize"/>
-        <TextBox x:Name="SearchUsedSizeTExtBox" HorizontalAlignment="Left" Margin="320,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="40" FontSize="14"/>
+        <TextBox x:Name="SearchUsedSizeTextBox" HorizontalAlignment="Left" Margin="320,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="40" FontSize="14"/>
         <Button x:Name="InsertRecordButton" Content="Dodaj wpis" HorizontalAlignment="Left" Margin="245,200,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="InsertRecord"/>
         <Button x:Name="UpdateRecordButton" Content="Edytuj wpis" HorizontalAlignment="Left" Margin="245,245,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="UpdateRecordClick" IsEnabled="False"/>
         <Button x:Name="DeleteRecordButton" Content="Usuń wpis" HorizontalAlignment="Left" Margin="245,290,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" Click="DeleteRecord" IsEnabled="false"/>
