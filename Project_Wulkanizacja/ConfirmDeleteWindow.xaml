@@ -1,0 +1,26 @@
+﻿<Window x:Class="Project_Wulkanizacja.ConfirmDeleteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Wulkanizacja"
+        mc:Ignorable="d"
+        Title="ConfirmDeleteWindow" Height="350" Width="800">
+    <Grid>
+        <DataGrid x:Name="DataGridWithRecordToBeDeleted" AutoGenerateColumns="False" IsReadOnly="True" Height="75" Width="750" Margin="25,82,25,177">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="numer rejestracyjny" Binding="{Binding nr_rejestracyjny}"/>
+                <DataGridTextColumn Header="marka samochodu" Binding="{Binding marka_samochodu}"/>
+                <DataGridTextColumn Header="koła/opony" Binding="{Binding kola_opony}"/>
+                <DataGridTextColumn Header="rozmiar" Binding="{Binding rozmiar}"/>
+                <DataGridTextColumn Header="jakość" Binding="{Binding jakosc}"/>
+                <DataGridTextColumn Header="numer magazynu" Binding="{Binding nr_magazynu}"/>
+                <DataGridTextColumn Header="status" Binding="{Binding status}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Na pewno chcesz usunąć wybrany rekord? Tej operacji nie można odwrócić." HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Height="47" Width="750" FontSize="22" FontWeight="Normal"/>
+        <Button x:Name="ConfirmDeleteButton" Content="Tak" HorizontalAlignment="Left" Margin="50,223,0,0" VerticalAlignment="Top" Width="180" Height="75" FontSize="36" Click="ConfirmDeleteClick"/>
+        <Button x:Name="CancelDeleteButton" Content="Nie" Margin="570,218,50,0" VerticalAlignment="Top" Height="75" Click="CancelDeleteClick" FontSize="36"/>
+
+    </Grid>
+</Window>

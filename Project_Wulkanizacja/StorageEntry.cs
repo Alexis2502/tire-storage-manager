@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Wulkanizacja
 {
-    internal class StorageEntry
+    public class StorageEntry
     {
         public int id { get; set; }
         public String nr_rejestracyjny { get; set; }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Wulkanizacja"
         mc:Ignorable="d"
-        Title="InsertRecordWindow" Height="450" Width="300">
+        Title="InsertRecordWindow" Height="450" Width="350">
     <Grid Margin="0,0,0,0">
         <Label Content="numer rejestracyjny:" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
         <TextBox x:Name="InsertRegistrationNumberTextBox" HorizontalAlignment="Left" Margin="150,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -17,15 +17,15 @@
                   Margin="150,115,0,0" 
                   VerticalAlignment="Top" 
                   Width="140" Height="30"/>
-        <Label Content="??rozmiar:" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
+        <Label Content="rozmiar:" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
         <TextBox x:Name="InsertSizeTextBox" HorizontalAlignment="Left" Margin="150,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <Label Content="jakość:" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
         <ComboBox x:Name="InsertQualityComboBox" HorizontalAlignment="Left" Margin="150,215,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
         <Label Content="numer magazynu:" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
-        <ComboBox x:Name="InsertWarehouseComboBox" HorizontalAlignment="Left" Margin="150,265,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
         <Label Content="status:" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" Width="135"/>
         <ComboBox x:Name="InsertStatusComboBox" HorizontalAlignment="Left" Margin="150,315,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
-        <Button x:Name="InsertIntoButton" Content="Dodaj" HorizontalAlignment="Center" Margin="0,375,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
+        <Button x:Name="InsertIntoButton" Content="Dodaj" HorizontalAlignment="Center" Margin="0,375,0,0" VerticalAlignment="Top" Width="150" Height="30" Click="InsertRecord"/>
+        <TextBox x:Name="InsertWarehouseNumberTextBox" HorizontalAlignment="Left" Margin="150,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
 
     </Grid>
 </Window>

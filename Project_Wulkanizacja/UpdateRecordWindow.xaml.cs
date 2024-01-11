@@ -24,22 +24,33 @@ namespace Project_Wulkanizacja
 
         List<String> WheelOrTire;
         List<String> Qualities;
-        List<String> WarehouseNumbers;
         List<String> Statuses;
 
-        public UpdateRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> warehouseNumbers, List<String> statuses)
+        StorageEntry StorageEntryToBeEdited;
+
+        public UpdateRecordWindow(List<String> wheelOrTire, List<String> qualities, List<String> statuses, StorageEntry storageEntry)
         {
             WheelOrTire = wheelOrTire;
             Qualities = qualities;
-            WarehouseNumbers = warehouseNumbers;
             Statuses = statuses;
+            StorageEntryToBeEdited = storageEntry;
 
             InitializeComponent();
 
             UpdateWheelTireComboBox.ItemsSource = WheelOrTire;
             UpdateQualityComboBox.ItemsSource = Qualities;
-            UpdateWarehouseComboBox.ItemsSource = WarehouseNumbers;
             UpdateStatusComboBox.ItemsSource = Statuses;
+
+            //set initial textbox values
+            UpdateRegistrationNumberTextBox.Text = StorageEntryToBeEdited.nr_rejestracyjny;
+            UpdateCarBrandTextBox.Text = StorageEntryToBeEdited.marka_samochodu;
+            UpdateSizeTextBox.Text = StorageEntryToBeEdited.rozmiar;
+            UpdateWarehouseNumberTextBox.Text = StorageEntryToBeEdited.nr_magazynu.ToString();
+            
+            //set initial comboboxes' values
+            UpdateWheelTireComboBox.SelectedItem = StorageEntryToBeEdited.kola_opony;
+            UpdateQualityComboBox.SelectedItem = StorageEntryToBeEdited.jakosc;
+            UpdateStatusComboBox.SelectedItem = StorageEntryToBeEdited.status;
         }
 
         private void UpdateRecord(object sender, RoutedEventArgs e)
@@ -47,20 +58,20 @@ namespace Project_Wulkanizacja
             if (IsSetCorrectly())
             {
                 String setString = "";
-                String valuesString = "";
-                valuesString += "'" + UpdateRegistrationNumberTextBox.Text + "', ";
-                valuesString += "'" + UpdateCarBrandTextBox.Text + "', ";
-                valuesString += "'" + UpdateWheelTireComboBox.Text + ", ";
-                valuesString += UpdateSizeTextBox.Text + ", ";
-                valuesString += "'" + UpdateQualityComboBox.Text + "', ";
-                valuesString += "'" + UpdateWarehouseComboBox.Text + "', ";
-                valuesString += "'" + UpdateStatusComboBox.Text + "'";
+                String afterWhereString = "id="+StorageEntryToBeEdited.id;
+
+                setString += "nr_rejestracyjny='" + UpdateRegistrationNumberTextBox.Text.Trim() + "', ";
+                setString += "marka_samochodu='" + UpdateCarBrandTextBox.Text.Trim() + "', ";
+                setString += "kola_opony='" + UpdateWheelTireComboBox.Text.Trim() + "', ";
+                setString += "rozmiar='" + UpdateSizeTextBox.Text.Trim() + "', ";
+                setString += "jakosc='" + UpdateQualityComboBox.Text.Trim() + "', ";
+                setString += "nr_magazynu=" + UpdateWarehouseNumberTextBox.Text.Trim() + ", ";
+                setString += "status='" + UpdateStatusComboBox.Text.Trim() + "'";
 
 
 
-
-                dBConnect.Update();
-
+                dBConnect.Update(setString, afterWhereString);
+                this.Close();
             }
             else
             {
@@ -71,10 +82,14 @@ namespace Project_Wulkanizacja
 
         private bool IsSetCorrectly()
         {
-            if (!(string.IsNullOrWhiteSpace(UpdateRegistrationNumberTextBox.Text) && string.IsNullOrWhiteSpace(UpdateCarBrandTextBox.Text) && UpdateWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(UpdateSizeTextBox.Text) && UpdateWarehouseComboBox == null && UpdateStatusComboBox == null))
+            if (!(string.IsNullOrWhiteSpace(UpdateRegistrationNumberTextBox.Text.Trim()) && string.IsNullOrWhiteSpace(UpdateCarBrandTextBox.Text.Trim()) && UpdateWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(UpdateSizeTextBox.Text.Trim()) && UpdateWarehouseNumberTextBox == null && UpdateStatusComboBox == null))
             {
-                if (int.TryParse(UpdateSizeTextBox.Text, out int parsedSize))
+                if (int.TryParse(UpdateSizeTextBox.Text.Trim(), out int parsedSize) && int.TryParse(UpdateWarehouseNumberTextBox.Text.Trim(), out int parsed2))
                 {
+                    if (!(parsed2 > 0 && parsed2 <= 210))
+                    {
+                        return false;
+                    }
                     return true;
                 }
                 else

@@ -9,30 +9,41 @@
     <Grid>
         <Label Content="Rejestracja" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="RegistrationInputTextBox" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Height="30"/>
-        <Button x:Name="RegistrationSearchButton" Content="Szukaj" HorizontalAlignment="Left" Margin="225,41,0,0" VerticalAlignment="Top" Width="104" Height="30"/>
-        <DataGrid x:Name="ResultsGrid" d:ItemsSource="{d:SampleData ItemCount=10}" Margin="10,76,375,184" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="true"/>
+        <Button x:Name="RegistrationSearchButton" Content="Szukaj" HorizontalAlignment="Left" Margin="225,41,0,0" VerticalAlignment="Top" Width="104" Height="30" Click="SearchByRegistrationNumber"/>
+        <DataGrid x:Name="ResultsGrid" AutoGenerateColumns="False" Margin="10,76,375,184" SelectionChanged="DataGrid_SelectionChanged" Width="1050" Height="544" IsReadOnly="true">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="numer rejestracyjny" Binding="{Binding nr_rejestracyjny}"/>
+                <DataGridTextColumn Header="marka samochodu" Binding="{Binding marka_samochodu}"/>
+                <DataGridTextColumn Header="koła/opony" Binding="{Binding kola_opony}"/>
+                <DataGridTextColumn Header="rozmiar" Binding="{Binding rozmiar}"/>
+                <DataGridTextColumn Header="jakość" Binding="{Binding jakosc}"/>
+                <DataGridTextColumn Header="numer magazynu" Binding="{Binding nr_magazynu}"/>
+                <DataGridTextColumn Header="status" Binding="{Binding status}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="RemarkShowButton" Content="Pokaż uwagi" HorizontalAlignment="Left" Margin="10,746,0,0" VerticalAlignment="Top" Height="35" Width="600" IsEnabled="False" Click="ShowRemarks"/>
-        <Button x:Name="RemarkSaveButton" Content="Zapisz uwagi" HorizontalAlignment="Left" Margin="853,746,0,0" VerticalAlignment="Top" Height="35" Width="212" IsEnabled="False" Visibility="Hidden"/>
-        <Rectangle HorizontalAlignment="Left" Height="610" Margin="1070,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>
-        <Label Content="Filtry" HorizontalAlignment="Left" Margin="1220,29,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold" FontSize="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="37" Margin="1220,29,0,0" Stroke="Black" VerticalAlignment="Top" Width="60"/>
+        <Button x:Name="RemarkSaveButton" Content="Zapisz uwagi" HorizontalAlignment="Left" Margin="853,746,0,0" VerticalAlignment="Top" Height="35" Width="212" IsEnabled="False" Visibility="Hidden" Click="SaveRemark"/>
+        <Rectangle HorizontalAlignment="Left" Height="544" Margin="1070,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>
+        <Label Content="Filtry" HorizontalAlignment="Left" Margin="1220,90,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold" FontSize="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="37" Margin="1220,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="60"/>
         <TextBox x:Name="RemarkTextBox" HorizontalAlignment="Left" Height="76" Margin="634,665,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" Visibility="Hidden" IsEnabled="False"/>
-        <Label Content="??marka samochodu:" HorizontalAlignment="Left" Margin="1114,155,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
-        <ComboBox x:Name="FilterCarManufacturerComboBox" HorizontalAlignment="Left" Margin="1255,155,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
+        <Label Content="marka samochodu:" HorizontalAlignment="Left" Margin="1114,155,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="FilterCarManufacturerTextBox" HorizontalAlignment="Left" Margin="1255,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Height="30"/>
         <Label Content="kola/opony:" HorizontalAlignment="Left" Margin="1114,215,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
         <ComboBox x:Name="FilterWheelTiresComboBox" HorizontalAlignment="Left" Margin="1255,215,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
-        <Label Content="jakość:" HorizontalAlignment="Left" Margin="1114,335,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
-        <ComboBox x:Name="FilterQualityComboBox" HorizontalAlignment="Left" Margin="1255,335,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
-        <Label Content="numer magazynu:" HorizontalAlignment="Left" Margin="1114,395,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
-        <ComboBox x:Name="FilterWarehouseNumberComboBox" HorizontalAlignment="Left" Margin="1255,395,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
-        <Label Content="status:" HorizontalAlignment="Left" Margin="1114,455,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
-        <ComboBox x:Name="FilterStatusComboBox" HorizontalAlignment="Left" Margin="1255,455,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
-        <Button x:Name="FilterButton" Content="Filtruj" HorizontalAlignment="Left" Margin="1197,530,0,0" VerticalAlignment="Top" Height="41" Width="106"/>
+        <Label Content="jakość:" HorizontalAlignment="Left" Margin="1114,275,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="FilterQualityComboBox" HorizontalAlignment="Left" Margin="1255,275,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
+        <Label Content="numer magazynu:" HorizontalAlignment="Left" Margin="1114,335,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
+        <Label Content="status:" HorizontalAlignment="Left" Margin="1114,395,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="FilterStatusComboBox" HorizontalAlignment="Left" Margin="1255,395,0,0" VerticalAlignment="Top" Width="141" Height="30" RenderTransformOrigin="0.496,-2.199"/>
+        <Button x:Name="FilterButton" Content="Filtruj" HorizontalAlignment="Left" Margin="1197,447,0,0" VerticalAlignment="Top" Height="41" Width="106" Click="FilterRecords"/>
         <Button x:Name="RecordInsertButton" Content="Dodaj wpis" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Height="35" Width="600" Click="RecordInsertButton_Click"/>
         <Button x:Name="RecordEditButton" Content="Edytuj wpis" HorizontalAlignment="Left" Margin="10,665,0,0" VerticalAlignment="Top" Height="35" Width="600" IsEnabled="False" Click="UpdateRecord"/>
         <Label x:Name="RemarkLabel" Content="Uwagi:" HorizontalAlignment="Left" Margin="634,625,0,0" VerticalAlignment="Top" Height="35" Width="100" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Visibility="Hidden"/>
         <Button x:Name="RemarkHideButton" Content="Ukryj uwagi" HorizontalAlignment="Left" Margin="634,746,0,0" VerticalAlignment="Top" Height="35" Width="212" Click="HideRemarks" IsEnabled="False" Visibility="Hidden"/>
         <Button x:Name="RecordDeleteButton" Content="Usuń wpis" HorizontalAlignment="Left" Margin="10,705,0,0" VerticalAlignment="Top" Height="36" Width="600" IsEnabled="False" Click="DeleteRecord"/>
+        <TextBox x:Name="FilterWarehouseNumberTextBox" HorizontalAlignment="Left" Margin="1255,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Height="30"/>
+        <Button x:Name="FilterClearButton" Content="Wyczyść filtry" HorizontalAlignment="Left" Margin="1197,507,0,0" VerticalAlignment="Top" Height="41" Width="106" Click="ClearFIlters"/>
 
     </Grid>
 </Window>

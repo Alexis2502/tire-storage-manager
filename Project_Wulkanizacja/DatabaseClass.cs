@@ -82,7 +82,7 @@ namespace Project_Wulkanizacja
         }
         public void Insert(String valuesString)
         {
-            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, kola/opony, rozmiar, jakosc, nr_magazynu, status, notatki) VALUES("+valuesString+")";
+            string query = "INSERT INTO opony (nr_rejestracyjny, marka_samochodu, kola_opony, rozmiar, jakosc, nr_magazynu, status) VALUES("+valuesString+")";
 
             if (this.OpenConnection() == true)
             {
@@ -122,9 +122,23 @@ namespace Project_Wulkanizacja
             return results;
         }
 
-        public void Update()
+        public List<StorageEntry> SelectWithFilters(String afterWhereString)
         {
-            string query = "UPDATE opony SET # WHERE #";
+            List<StorageEntry> results = new List<StorageEntry>();
+            String query = "Select * FROM opony WHERE " + afterWhereString;
+
+            if (this.OpenConnection() == true)
+            {
+                results = connection.Query<StorageEntry>(query).AsList();
+
+                this.CloseConnection();
+            }
+            return results;
+        }
+
+        public void Update(String setString, String afterWHereString)
+        {
+            string query = "UPDATE opony SET "+setString+" WHERE "+afterWHereString;
 
             if (this.OpenConnection() == true)
             {
@@ -134,9 +148,9 @@ namespace Project_Wulkanizacja
             }
         }
 
-        public void Delete()
+        public void Delete(String stringAfterWhere)
         {
-            string query = "DELETE FROM opony WHERE #";
+            string query = "DELETE FROM opony WHERE " + stringAfterWhere;
 
             if (this.OpenConnection() == true)
             {
