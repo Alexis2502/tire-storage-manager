@@ -22,10 +22,10 @@ namespace Project_Wulkanizacja
     {
         DBConnect dBConnect = new DBConnect();
 
-        List<String> WheelOrTire = new List<String> { "koła", "opony" };
-        List<String> Qualities = new List<String> { "A", "B", "C", "D" };
+        List<String> WheelOrTire = new List<String> { "koła", "opony", "" };
+        List<String> Qualities = new List<String> { "A", "B", "C", "D", "" };
         //List<String> WarehouseNumbers = new List<String> {"1", "2", "3", "4" };
-        List<String> Statuses = new List<String> { "odebrane", "nieodebrane" };
+        List<String> Statuses = new List<String> { "odebrane", "nieodebrane", "" };
 
         List<StorageEntry> AllStorageEntries;
         StorageEntry SelectedStorageEntry;
@@ -169,7 +169,61 @@ namespace Project_Wulkanizacja
 
         private void FilterRecords(object sender, RoutedEventArgs e)
         {
+            String filterString = "";
+            //TextBox
+            if (!(string.IsNullOrWhiteSpace(FilterCarManufacturerTextBox.Text.Trim())))
+            {
+                filterString += "marka_samochodu='" + FilterCarManufacturerTextBox.Text.Trim() + "' AND ";
+            }
 
+            //checkbox
+            if(FilterWheelTiresComboBox.SelectedValue != null)
+            {
+                filterString += "kola_opony='"+FilterWheelTiresComboBox.Text.Trim()+"' AND ";
+            }
+
+            //checkbox
+            if (FilterQualityComboBox.SelectedValue != null)
+            {
+                filterString += "jakosc='" + FilterQualityComboBox.Text.Trim() + "' AND ";
+            }
+
+            //TextBox
+            if (!(string.IsNullOrWhiteSpace(FilterCarManufacturerTextBox.Text.Trim())))
+            {
+                if(int.TryParse(FilterWarehouseNumberTextBox.Text.Trim(), out int parsedWarehouseNumber))
+                {
+                    filterString += "nr_magazynu=" + parsedWarehouseNumber + " AND ";
+                }
+            }
+
+            //checkbox
+            if (FilterStatusComboBox.SelectedValue != null)
+            {
+                filterString += "status='" + FilterStatusComboBox.Text.Trim() + "' AND ";
+            }
+
+            //removing last ','
+            if(!string.IsNullOrWhiteSpace(filterString) && filterString.EndsWith(" AND "))
+            {
+                filterString = filterString.Substring(0, filterString.Length - 5);
+                AllStorageEntries = dBConnect.SelectWithFilters(filterString);
+            }
+            else if(string.IsNullOrWhiteSpace(filterString)){
+                //in case of no filters applied
+                AllStorageEntries = dBConnect.SelectFromTable();
+            }
+
+            ResultsGrid.ItemsSource = AllStorageEntries;
+        }
+
+        private void ClearFIlters(object sender, RoutedEventArgs e)
+        {
+            FilterCarManufacturerTextBox.Text = "";
+            FilterWheelTiresComboBox.SelectedValue = null;
+            FilterQualityComboBox.SelectedValue = null;
+            FilterWarehouseNumberTextBox.Text = "";
+            FilterStatusComboBox.SelectedValue = null;
         }
     }
 }

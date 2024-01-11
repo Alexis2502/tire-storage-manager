@@ -122,6 +122,20 @@ namespace Project_Wulkanizacja
             return results;
         }
 
+        public List<StorageEntry> SelectWithFilters(String afterWhereString)
+        {
+            List<StorageEntry> results = new List<StorageEntry>();
+            String query = "Select * FROM opony WHERE " + afterWhereString;
+
+            if (this.OpenConnection() == true)
+            {
+                results = connection.Query<StorageEntry>(query).AsList();
+
+                this.CloseConnection();
+            }
+            return results;
+        }
+
         public void Update(String setString, String afterWHereString)
         {
             string query = "UPDATE opony SET "+setString+" WHERE "+afterWHereString;
