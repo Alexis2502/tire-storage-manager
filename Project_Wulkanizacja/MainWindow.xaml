@@ -36,7 +36,7 @@
         <Label Content="numer magazynu:" HorizontalAlignment="Left" Margin="1114,335,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
         <Label Content="status:" HorizontalAlignment="Left" Margin="1114,395,0,0" VerticalAlignment="Top" Width="136" Height="30" HorizontalContentAlignment="Right"/>
         <ComboBox x:Name="FilterStatusComboBox" HorizontalAlignment="Left" Margin="1255,395,0,0" VerticalAlignment="Top" Width="141" Height="30" RenderTransformOrigin="0.496,-2.199"/>
-        <Button x:Name="FilterButton" Content="Filtruj" HorizontalAlignment="Left" Margin="1197,447,0,0" VerticalAlignment="Top" Height="41" Width="106"/>
+        <Button x:Name="FilterButton" Content="Filtruj" HorizontalAlignment="Left" Margin="1197,447,0,0" VerticalAlignment="Top" Height="41" Width="106" Click="FilterRecords"/>
         <Button x:Name="RecordInsertButton" Content="Dodaj wpis" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Height="35" Width="600" Click="RecordInsertButton_Click"/>
         <Button x:Name="RecordEditButton" Content="Edytuj wpis" HorizontalAlignment="Left" Margin="10,665,0,0" VerticalAlignment="Top" Height="35" Width="600" IsEnabled="False" Click="UpdateRecord"/>
         <Label x:Name="RemarkLabel" Content="Uwagi:" HorizontalAlignment="Left" Margin="634,625,0,0" VerticalAlignment="Top" Height="35" Width="100" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Visibility="Hidden"/>

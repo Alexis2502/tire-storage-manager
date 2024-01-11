@@ -29,7 +29,7 @@ namespace Project_Wulkanizacja
 
         List<StorageEntry> AllStorageEntries;
         StorageEntry SelectedStorageEntry;
-        StorageEntry PreviouslySelected;
+        int TargetId;
 
         public MainWindow()
         {
@@ -51,9 +51,13 @@ namespace Project_Wulkanizacja
 
             SelectedStorageEntry = ResultsGrid.SelectedItem as StorageEntry;
 
-            if(RemarkTextBox.Visibility == Visibility.Visible)
+            if(RemarkTextBox.Visibility == Visibility.Visible && IsIdInShownRecords(TargetId))
             {
                 RemarkTextBox.Text = SelectedStorageEntry.notatki;
+            }
+            else
+            {
+                RemarkTextBox.Text = "";
             }
 
         }
@@ -115,10 +119,10 @@ namespace Project_Wulkanizacja
             SelectedStorageEntry.notatki = RemarkTextBox.Text;
             dBConnect.Update(setString, afterWhereString);
 
-            int id = SelectedStorageEntry.id;
+            TargetId = SelectedStorageEntry.id;
 
             AllStorageEntries = dBConnect.SelectFromTable();
-            SelectDataGridItemById(id);
+            SelectDataGridItemById(TargetId);
         }
 
         private void SearchByRegistrationNumber(object sender, RoutedEventArgs e)
@@ -136,16 +140,47 @@ namespace Project_Wulkanizacja
             }
         }
 
-        private void SelectDataGridItemById(int targetId)
+        private bool IsIdInShownRecords(int targetId)
         {
             foreach (StorageEntry entry in ResultsGrid.Items)
             {
                 if(entry.id == targetId)
                 {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void SelectDataGridItemById(int targetId)
+        {
+            //bool broken = false;
+            foreach (StorageEntry entry in ResultsGrid.Items)
+            {
+                if(entry.id == targetId)
+                {
                     ResultsGrid.SelectedItem = entry;
+                    //broken = true;
                     break;
                 }
             }
+            //if(broken == false)
+            //{
+            //    RemarkTextBox.IsEnabled = false;
+            //    RemarkTextBox.Visibility = Visibility.Hidden;
+            //    RemarkSaveButton.IsEnabled = false;
+            //    RemarkSaveButton.Visibility = Visibility.Hidden;
+            //    RemarkHideButton.IsEnabled = false;
+            //    RemarkHideButton.Visibility = Visibility.Hidden;
+            //    RemarkLabel.IsEnabled = false;
+            //    RemarkLabel.Visibility = Visibility.Hidden;
+            //}
+
+        }
+
+        private void FilterRecords(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
