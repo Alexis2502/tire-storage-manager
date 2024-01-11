@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Wulkanizacja
 {
-    internal class UsedEntry
+    public class UsedEntry
     {
         public int id { get; set; }
         public String rozmiar { get; set; }
