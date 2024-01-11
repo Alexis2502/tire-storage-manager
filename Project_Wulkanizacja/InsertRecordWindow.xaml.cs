@@ -68,18 +68,7 @@ namespace Project_Wulkanizacja
         {
             if (!(string.IsNullOrWhiteSpace(InsertRegistrationNumberTextBox.Text.Trim()) && string.IsNullOrWhiteSpace(InsertCarBrandTextBox.Text.Trim()) && InsertWheelTireComboBox.SelectedValue == null && string.IsNullOrWhiteSpace(InsertSizeTextBox.Text.Trim()) && InsertWarehouseNumberTextBox == null && InsertStatusComboBox == null))
             {
-                if (int.TryParse(InsertSizeTextBox.Text.Trim(), out int parsedSize) && int.TryParse(InsertWarehouseNumberTextBox.Text.Trim(), out int parsed2))
-                {
-                    if (!(parsed2 > 0 && parsed2 <= 210))
-                    {
-                        return false;
-                    }
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
 
             }
             return false;

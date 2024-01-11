@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Wulkanizacja"
         mc:Ignorable="d"
-        Title="Wybór okna" Height="450" Width="810">
-    <Grid>
-        <Button x:Name="ChooseWulkanizacja" Content="Magazyn opon" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="414" Width="390" Click="ShowWulkanizacja" FontSize="48"/>
-        <Button x:Name="ChooseUsedTires" Content="Opony używane" HorizontalAlignment="Left" Margin="410,0,0,0" VerticalAlignment="Center" Height="414" Width="390" FontSize="48" Click="ShowUsedTires"/>
+        Title="Wybór okna" Height="500" Width="520" MinHeight="500" MaxHeight="500" MinWidth="520" MaxWidth="520">
+    <Grid Margin="0,0,0,-6">
+        <Button x:Name="ChooseWulkanizacja" Content="Magazyn opon" HorizontalAlignment="Center" Margin="0,128,0,0" VerticalAlignment="Top" Height="50" Width="390" Click="ShowWulkanizacja" FontSize="24"/>
+        <Button x:Name="ChooseUsedTires" Content="Opony używane" HorizontalAlignment="Center" Margin="0,245,0,0" VerticalAlignment="Top" Height="50" Width="390" FontSize="24" Click="ShowUsedTires"/>
 
     </Grid>
 </Window>
