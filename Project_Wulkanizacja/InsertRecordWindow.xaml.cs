@@ -46,13 +46,13 @@ namespace Project_Wulkanizacja
             if (IsSetCorrectly())
             {
                 String valuesString = "";
-                valuesString += "'" + InsertRegistrationNumberTextBox.Text.Trim() + "', ";
-                valuesString += "'" + InsertCarBrandTextBox.Text + "', ";
-                valuesString += "'" + InsertWheelTireComboBox.Text.Trim() + "', ";
-                valuesString += "'" + InsertSizeTextBox.Text.Trim() + "', ";
-                valuesString += "'" + InsertQualityComboBox.Text.Trim() + "', ";
-                valuesString += "" + InsertWarehouseNumberTextBox.Text.Trim() + ", ";
-                valuesString += "'" + InsertStatusComboBox.Text.Trim() + "'";
+                valuesString += "'" + InsertRegistrationNumberTextBox.Text.Trim().ToLower() + "', ";
+                valuesString += "'" + InsertCarBrandTextBox.Text.ToLower() + "', ";
+                valuesString += "'" + InsertWheelTireComboBox.Text.Trim().ToLower() + "', ";
+                valuesString += "'" + InsertSizeTextBox.Text.Trim().ToLower() + "', ";
+                valuesString += "'" + InsertQualityComboBox.Text.Trim().ToLower() + "', ";
+                valuesString += "" + InsertWarehouseNumberTextBox.Text.Trim().ToLower() + ", ";
+                valuesString += "'" + InsertStatusComboBox.Text.Trim().ToLower() + "'";
 
                 dBConnect.Insert(valuesString);
                 this.Close();

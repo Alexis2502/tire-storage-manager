@@ -60,13 +60,13 @@ namespace Project_Wulkanizacja
                 String setString = "";
                 String afterWhereString = "id="+StorageEntryToBeEdited.id;
 
-                setString += "nr_rejestracyjny='" + UpdateRegistrationNumberTextBox.Text.Trim() + "', ";
-                setString += "marka_samochodu='" + UpdateCarBrandTextBox.Text.Trim() + "', ";
-                setString += "kola_opony='" + UpdateWheelTireComboBox.Text.Trim() + "', ";
-                setString += "rozmiar='" + UpdateSizeTextBox.Text.Trim() + "', ";
-                setString += "jakosc='" + UpdateQualityComboBox.Text.Trim() + "', ";
-                setString += "nr_magazynu=" + UpdateWarehouseNumberTextBox.Text.Trim() + ", ";
-                setString += "status='" + UpdateStatusComboBox.Text.Trim() + "'";
+                setString += "nr_rejestracyjny='" + UpdateRegistrationNumberTextBox.Text.Trim().ToLower() + "', ";
+                setString += "marka_samochodu='" + UpdateCarBrandTextBox.Text.Trim().ToLower() + "', ";
+                setString += "kola_opony='" + UpdateWheelTireComboBox.Text.Trim().ToLower() + "', ";
+                setString += "rozmiar='" + UpdateSizeTextBox.Text.Trim().ToLower() + "', ";
+                setString += "jakosc='" + UpdateQualityComboBox.Text.Trim().ToLower() + "', ";
+                setString += "nr_magazynu=" + UpdateWarehouseNumberTextBox.Text.Trim().ToLower() + ", ";
+                setString += "status='" + UpdateStatusComboBox.Text.Trim().ToLower() + "'";
 
 
 
