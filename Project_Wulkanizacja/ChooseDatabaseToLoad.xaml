@@ -9,6 +9,7 @@
     <Grid Margin="0,0,0,-6">
         <Button x:Name="ChooseWulkanizacja" Content="Magazyn opon" HorizontalAlignment="Center" Margin="0,128,0,0" VerticalAlignment="Top" Height="50" Width="390" Click="ShowWulkanizacja" FontSize="24"/>
         <Button x:Name="ChooseUsedTires" Content="Opony używane" HorizontalAlignment="Center" Margin="0,245,0,0" VerticalAlignment="Top" Height="50" Width="390" FontSize="24" Click="ShowUsedTires"/>
+        <Button x:Name="ChangeDBDataButton" Content="Zmień dane połączenia" HorizontalAlignment="Center" Margin="0,369,0,0" VerticalAlignment="Top" Height="50" Width="390" FontSize="24" Click="ChangeDBData"/>
 
     </Grid>
 </Window>

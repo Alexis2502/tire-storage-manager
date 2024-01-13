@@ -26,7 +26,9 @@ namespace Project_Wulkanizacja
         {
             if (!File.Exists(filepath))
             {
-                CreateJsonFile(filepath);
+                //CreateJsonFile(filepath);
+                GetDatabaseConnectionData getDatabaseConnectionData = new GetDatabaseConnectionData();
+                getDatabaseConnectionData.ShowDialog();
             }
             InitializeComponent();
         }
@@ -58,6 +60,12 @@ namespace Project_Wulkanizacja
             string jsonContent = JsonConvert.SerializeObject(credentials, Formatting.Indented);
 
             File.WriteAllText(filepath, jsonContent);
+        }
+
+        private void ChangeDBData(object sender, RoutedEventArgs e)
+        {
+            GetDatabaseConnectionData getDatabaseConnectionData = new GetDatabaseConnectionData();
+            getDatabaseConnectionData.ShowDialog();
         }
     }
 }
